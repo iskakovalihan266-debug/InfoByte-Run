@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="kk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102d63">
+  <meta name="description" content="Пәнді таңдап, оқулық PDF-файлын InfoByte оқу кабинетінде оқыңыз.">
+  <title>Кітап оқу · InfoByte</title>
+  <link rel="stylesheet" href="/welcome.css">
+  <link rel="stylesheet" href="/reading.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="side">
+      <a class="reading-logo" href="/welcome.html" aria-label="InfoByte басты беті">Info<span>Byte</span></a>
+      <div class="caption">ОҚУ КАБИНЕТІ</div>
+      <nav class="nav" aria-label="Негізгі мәзір">
+        <a href="/welcome.html">⌂ &nbsp; Басты бет</a>
+        <a href="/library.html">▤ &nbsp; Кітапхана</a>
+        <a class="active" href="/reading.html" aria-current="page">📖 &nbsp; Кітап оқу</a>
+        <a href="/python.html">⌘ &nbsp; Python есептері</a>
+        <a href="/tests.html">✓ &nbsp; ҰБТ тесттері</a>
+        <a href="/mistakes.html">↻ &nbsp; Қателер дәптері</a>
+        <a href="/progress.html">◷ &nbsp; Нәтижелерім</a>
+      </nav>
+      <div class="reading-side-note">Оқуды жалғастыру үшін пәнді таңдап, кітапты ашыңыз.</div>
+      <div class="side-bottom">
+        <button class="logout" id="logout" type="button">↪ &nbsp; Аккаунттан шығу</button>
+        <p id="message" class="status" role="status"></p>
+      </div>
+    </aside>
+
+    <main class="main reading-main">
+      <header class="top">
+        <span>InfoByte оқу платформасы</span>
+        <a class="profile" href="/welcome.html">Оқу кабинеті</a>
+      </header>
+
+      <section id="catalog-view" class="catalog-view" aria-labelledby="page-title">
+        <div class="reading-hero">
+          <div class="reading-hero-copy">
+            <p class="reading-eyebrow">ОҚУЛЫҚТАР ЖИНАҒЫ</p>
+            <h1 id="page-title">Кітап оқу</h1>
+            <p>Пәнді таңдаңыз да, қажет оқулықты ашып оқыңыз. Кітаптар тізімі каталогтан әр жаңартқанда қайта жүктеледі.</p>
+          </div>
+          <div class="hero-book" aria-hidden="true"><span>📘</span></div>
+        </div>
+
+        <section class="catalog-section" aria-labelledby="catalog-heading">
+          <div class="catalog-heading-row">
+            <div>
+              <p class="section-eyebrow">ПӘН БОЙЫНША</p>
+              <h2 id="catalog-heading">Кітаптар</h2>
+            </div>
+            <span id="book-count" class="book-count" aria-live="polite"></span>
+          </div>
+          <div id="subject-filters" class="subject-filters" role="group" aria-label="Пән бойынша сүзгі"></div>
+          <p id="catalog-status" class="catalog-status" role="status" aria-live="polite">Каталог жүктеліп жатыр…</p>
+          <div id="books-grid" class="books-grid" aria-busy="true"></div>
+        </section>
+      </section>
+
+      <section id="reader-view" class="reader-view" aria-labelledby="reader-title" hidden>
+        <div class="reader-topline">
+          <button id="back-to-books" class="back-button" type="button"><span aria-hidden="true">←</span> Кітаптарға оралу</button>
+          <span class="reader-label">PDF ОҚУ РЕЖИМІ</span>
+        </div>
+        <header class="reader-heading">
+          <div>
+            <p id="reader-meta" class="reader-meta"></p>
+            <h1 id="reader-title"></h1>
+            <p id="reader-authors" class="reader-authors"></p>
+          </div>
+          <a id="open-pdf" class="open-pdf" href="#" target="_blank" rel="noopener" hidden>PDF-ті жаңа бетте ашу <span aria-hidden="true">↗</span></a>
+        </header>
+        <p id="reader-status" class="reader-status" role="status" aria-live="polite"></p>
+        <div id="pdf-frame-wrap" class="pdf-frame-wrap" hidden>
+          <iframe id="pdf-frame" title="Кітаптың PDF оқу аймағы"></iframe>
+        </div>
+        <div id="pdf-error" class="pdf-error" role="status" hidden>
+          <span class="pdf-error-icon" aria-hidden="true">!</span>
+          <div>
+            <h2>PDF файлын ашу мүмкін болмады</h2>
+            <p id="pdf-error-text"></p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="/welcome.js" defer></script>
+  <script src="/reading.js" defer></script>
+</body>
+</html>

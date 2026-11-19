@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="kk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102d63">
+  <meta name="description" content="InfoByte тест нәтижелері мен оқу барысын қараңыз.">
+  <title>Нәтижелерім · InfoByte</title>
+  <link rel="stylesheet" href="/welcome.css">
+  <link rel="stylesheet" href="/progress.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="side">
+      <a class="progress-logo" href="/welcome.html" aria-label="InfoByte басты беті">Info<span>Byte</span></a>
+      <div class="caption">ОҚУ КАБИНЕТІ</div>
+      <nav class="nav" aria-label="Негізгі мәзір">
+        <a href="/welcome.html">⌂ &nbsp; Басты бет</a>
+        <a href="/library.html">▤ &nbsp; Кітапхана</a>
+        <a href="/reading.html">📖 &nbsp; Кітап оқу</a>
+        <a href="/python.html">⌘ &nbsp; Python есептері</a>
+        <a href="/tests.html">✓ &nbsp; ҰБТ тесттері</a>
+        <a href="/mistakes.html">↻ &nbsp; Қателер дәптері</a>
+        <a class="active" href="/progress.html" aria-current="page">◷ &nbsp; Нәтижелерім</a>
+      </nav>
+      <div class="progress-side-note">Әр тест — ілгерілеудің жаңа өлшемі.</div>
+      <div class="side-bottom">
+        <button class="logout" id="logout" type="button">↪ &nbsp; Аккаунттан шығу</button>
+        <p id="message" class="status" role="status"></p>
+      </div>
+    </aside>
+
+    <main class="main progress-main">
+      <header class="top">
+        <span>InfoByte оқу платформасы</span>
+        <a class="profile" href="/welcome.html">Оқу кабинеті</a>
+      </header>
+
+      <section class="progress-hero" aria-labelledby="page-title">
+        <div>
+          <p class="progress-eyebrow">ЖЕКЕ ОҚУ ЕСЕБІ</p>
+          <h1 id="page-title">Нәтижелерім</h1>
+          <p>Тесттеріңізді, дұрыс жауаптарыңызды және қай тақырыпты қайталау керегін бір жерден көріңіз.</p>
+        </div>
+        <a class="tests-link" href="/tests.html">Тест тапсыру <span aria-hidden="true">→</span></a>
+      </section>
+
+      <p id="progress-status" class="progress-status" role="status" aria-live="polite">Нәтижелер жүктеліп жатыр…</p>
+
+      <section id="stats" class="stats-grid" aria-label="Жалпы статистика" aria-live="polite">
+        <article class="stat-card stat-blue"><span class="stat-icon">✓</span><span id="tests-completed" class="stat-value">—</span><span class="stat-label">Аяқталған тест</span></article>
+        <article class="stat-card stat-violet"><span class="stat-icon">%</span><span id="accuracy" class="stat-value">—</span><span class="stat-label">Жалпы дәлдік</span></article>
+        <article class="stat-card stat-green"><span class="stat-icon">★</span><span id="best-result" class="stat-value">—</span><span class="stat-label">Ең үздік нәтиже</span></article>
+        <article class="stat-card stat-amber"><span class="stat-icon">◷</span><span id="in-progress" class="stat-value">—</span><span class="stat-label">Аяқталмаған тест</span></article>
+      </section>
+
+      <section class="overview-strip" aria-label="Жауаптар саны">
+        <div class="overview-symbol" aria-hidden="true">▣</div>
+        <div><strong id="answer-ratio">—</strong><span> сұраққа дұрыс жауап берілді</span></div>
+        <a href="/mistakes.html">Қателерді талдау <span aria-hidden="true">→</span></a>
+      </section>
+
+      <div class="progress-columns">
+        <section class="panel topics-panel" aria-labelledby="topics-title">
+          <div class="panel-heading">
+            <div><p class="panel-eyebrow">БІЛІМ ДЕҢГЕЙІ</p><h2 id="topics-title">Тақырыптар бойынша</h2></div>
+          </div>
+          <p id="topics-empty" class="section-empty" hidden>Тақырыптық көрсеткіштер тестті аяқтағаннан кейін пайда болады.</p>
+          <div id="topic-list" class="topic-list" aria-busy="true"></div>
+        </section>
+
+        <section class="panel recent-panel" aria-labelledby="recent-title">
+          <div class="panel-heading">
+            <div><p class="panel-eyebrow">СОҢҒЫ ӘРЕКЕТТЕР</p><h2 id="recent-title">Тест тарихы</h2></div>
+          </div>
+          <p id="recent-empty" class="section-empty" hidden>Әзірге тест нәтижесі жоқ. Алғашқы тестіңізді бастап көріңіз.</p>
+          <div id="recent-list" class="recent-list" aria-busy="true"></div>
+        </section>
+      </div>
+      <footer class="progress-footer">Көрсеткіштер аяқталған тест әрекеттері бойынша есептеледі.</footer>
+    </main>
+  </div>
+  <script src="/welcome.js" defer></script>
+  <script src="/progress.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="kk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102d63">
+  <meta name="description" content="Тест кезінде жіберген қателеріңізді қарап, дұрыс жауаптарды талдаңыз.">
+  <title>Қателер дәптері · InfoByte</title>
+  <link rel="stylesheet" href="/mistakes.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/welcome.html" aria-label="InfoByte басты беті">Info<span>Byte</span></a>
+    <nav aria-label="Негізгі навигация">
+      <a href="/welcome.html">Басты бет</a>
+      <a href="/tests.html">Тесттер</a>
+      <a class="current" href="/mistakes.html" aria-current="page">Қателер дәптері</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow">ЖЕКЕ ОҚУ КӨМЕКШІСІ</p>
+      <h1 id="page-title">Қателер дәптері</h1>
+      <p class="intro-copy">Қате жауаптарыңызды қарап, дұрыс нұсқамен салыстырыңыз. Әр қатені белгілеп, қай тақырыпты қайталау керегін анықтаңыз.</p>
+      <a class="start-link" href="/tests.html">Жаңа тест бастау <span aria-hidden="true">→</span></a>
+    </section>
+
+    <section id="summary" class="summary" aria-label="Қателер статистикасы" aria-live="polite">
+      <div class="stat-card"><span class="stat-value">—</span><span class="stat-label">Барлық қате</span></div>
+      <div class="stat-card"><span class="stat-value">—</span><span class="stat-label">Қайталау керек</span></div>
+      <div class="stat-card"><span class="stat-value">—</span><span class="stat-label">Қаралған</span></div>
+    </section>
+
+    <section class="review-area" aria-labelledby="review-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">ТЕСТ ТАЛДАУЫ</p>
+          <h2 id="review-title">Қайталап қарайтын сұрақтар</h2>
+        </div>
+        <label class="search-label">
+          <span class="visually-hidden">Сұрақтарды іздеу</span>
+          <span class="search-icon" aria-hidden="true">⌕</span>
+          <input id="search" type="search" placeholder="Сұрақ не тақырып іздеу…" autocomplete="off">
+        </label>
+      </div>
+
+      <div class="filters" role="group" aria-label="Қателерді сүзу">
+        <button type="button" class="filter is-active" data-filter="all" aria-pressed="true">Барлығы</button>
+        <button type="button" class="filter" data-filter="pending" aria-pressed="false">Қайталау керек</button>
+        <button type="button" class="filter" data-filter="reviewed" aria-pressed="false">Қаралған</button>
+      </div>
+
+      <p id="status" class="status" role="status" aria-live="polite">Қателер жүктеліп жатыр…</p>
+      <div id="mistake-list" class="mistake-list" aria-busy="true"></div>
+    </section>
+  </main>
+
+  <footer>© <span id="year"></span> InfoByte · Қателеріңіз — келесі қадамыңызға бағыт</footer>
+  <script type="module" src="/shared/mistakes.js"></script>
+</body>
+</html>
